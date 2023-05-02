@@ -1,4 +1,4 @@
-package com.example.gulimallware;
+package com.example.gulimall.ware;
 
 import com.example.gulimall.ware.entity.OmsOrderEntity;
 import com.example.gulimall.ware.service.OmsOrderService;
@@ -14,7 +14,7 @@ class GulimallWareApplicationTests {
 	@Test
 	void contextLoads() {
 	 OmsOrderEntity omsOrder=new OmsOrderEntity();
-		omsOrder.setOrderSn("123456");
+		omsOrder.setOrderSn("1234567");
 		omsOrderService.save(omsOrder);
 	}
 
