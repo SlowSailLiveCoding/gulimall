@@ -1,6 +1,7 @@
 package com.example.gulimall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,11 +34,11 @@ public class CategoryController {
     /**
      * 列表
      */
-    @RequestMapping("/list")
-    public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = categoryService.queryPage(params);
-
-        return R.ok().put("page", page);
+    @RequestMapping("/list/category")
+    public R list(){
+        List<CategoryEntity> categoryTree = categoryService.getCategoryTree();
+        return R.ok().put("categoryTree",categoryTree);
+        //这里估计网上的代码写的是data，所以取的时候也是data，我们要注意匹配一下
     }
 
 

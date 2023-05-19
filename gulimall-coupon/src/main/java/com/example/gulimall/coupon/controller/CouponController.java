@@ -50,15 +50,15 @@ public class CouponController {
         return R.ok().put("coupons", Arrays.asList(couponEntity));
     }
 
-//    @Value("${coupon.user.name}")//从application.properties中获取//不要写user.name，他是环境里的变量
-//    private String name;
-//    @Value("${coupon.user.age}")
-//    private Integer age;
-//    @RequestMapping("/test")
-//    public R test(){
-//
-//        return R.ok().put("name",name).put("age",age);
-//    }
+    @Value("${coupon.user.name:tom}")//从application.properties中获取//不要写user.name，他是环境里的变量
+    private String name;
+    @Value("${coupon.user.age:13}")
+    private Integer age;
+    @RequestMapping("/test")
+    public R test(){
+
+        return R.ok().put("name",name).put("age",age);
+    }
 
 
     /**
